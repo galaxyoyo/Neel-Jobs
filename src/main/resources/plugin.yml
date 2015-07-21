@@ -1,0 +1,124 @@
+name: Jobs-RPG
+main: galaxyoyo.minecraft.bukkit.jobs.JobsPlugin
+version: 1.0
+author: galaxyoyo
+depend: [ProtocolLib]
+
+commands:
+  job:
+    description: Gestion des jobs
+    usage: /job change <player> [1 | 2] <job>
+    permission: jobsrpg.command.job
+  competences:
+    description: Affiche les compétences
+    usage: /comp
+    aliases:
+    - comp
+  illegality:
+    description: Permet de gérer l'illégalité
+    usage: /illegality [add | remove | set] <amount> <player>
+    permission: jobsrpg.command.illegality
+    aliases:
+    - ill
+  production:
+    description: Permet de gérer l'argent qui rentre quotidiennement dans un coffre
+    usage: /prod <amount> <player>
+    permission: jobsrpg.command.production
+    aliases:
+    - prod
+  forge:
+    description: Accès à la forge
+    usage: /forge
+    permission: jobsrpg.command.forge
+    aliases:
+    - f
+  pattern:
+    description: Permet au maçon de copier une zone
+    usage: /pattern create <name> x1 y1 z1 x2 y2 z2
+    permission: jobsrpg.pattern.create
+    aliases:
+    - p
+  chuchotte:
+    description: Permet de chuchoter (reçu à 5 blocs)
+    usage: /c <message>
+    permission: jobsrpg.command.chuchotter
+    aliases:
+    - c
+  hurle:
+    description: Permet d'hurler (reçu à 50 blocs)
+    usage: /h <message>
+    permission: jobsrpg.command.hurler
+    aliases:
+    - h
+  horsrp:
+    description: Parler à tous hors RP
+    usage: /hrp
+    aliases:
+    - hrp
+  workbench:
+    description: Ouvrir une table de craft
+    permission: jobsrpg.command.workbench
+    usage: /wb
+    aliases:
+    - wb
+  infinityitems:
+    description: Définit un item qui permet d'ouvrir un coffre avec items infinis
+    permission: jobsrpg.command.infinityitems
+    usage: /ii [job <job> | perm <permission> | all | remove] [clear (true / false)]
+    aliases:
+    - ii
+  mine:
+    description: Permet de générer hebdomadairement la mine
+    permission: jobsrpg.command.mine
+    usage: /mine [regenerate | setA | setB | setsign [coal | iron | gold | lapis | redstone]]
+  protections:
+    description: Gère les protections de zones
+    permission: jobsrpg.command.protections
+    usage: /protec help
+    aliases:
+    - protect
+    - protec
+
+permissions:
+  jobsrpg.command.job:
+    description: Autorise l'accès à la commande /job
+    default: op
+  jobsrpg.command.competences.change:
+    description: Permet de changer les points de compétence in-game
+    default: op
+  jobsrpg.command.illegality:
+    description: Autorise la gestion de l'illégalité
+    default: op
+  jobsrpg.command.production:
+    description: Autorise la gestion de l'argent de maison
+    default: op
+  jobsrpg.command.forge:
+    description: Autorise l'accès à la forge
+    default: false
+  jobsrpg.pattern.create:
+    description: Autorise la création de patterns via le /pattern create
+    default: false
+  jobsrpg.pattern.place:
+    description: Autorise l'application d'un pattern
+    default: false
+  jobsrpg.command.chuchotter:
+    description: Autorise l'accès à la commande /c
+    default: true
+  jobsrpg.command.hurler:
+    description: Autorise l'accès à la commande /h
+    default: true
+  jobsrpg.blocks.breakProdMoney:
+    description: Permet de casser des coffres de production journalière
+    default: false
+  jobsrpg.command.workbench:
+    description: Autorise l'affichage de la table de craft via /wb
+    default: op
+  jobsrpg.command.infinityitems:
+    description: Permet de créer des inventaires infinis via /ii
+    default: op
+  jobsrpg.command.mine:
+    description: Autorise le changement de la mine via /mine
+    default: op
+  jobsrpg.command.protections:
+    description: Autorise la gestion des protections
+    default: op
